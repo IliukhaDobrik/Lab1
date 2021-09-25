@@ -30,4 +30,16 @@ public class Sandwitch extends Food{
 
         return get_calories();
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (!super.equals(obj)) return false;
+        if (!(obj instanceof Sandwitch)) return false;
+        return (_filling1.equals(((Sandwitch) obj)._filling1) && (_filling2.equals(((Sandwitch) obj)._filling2)));
+    }
+
+    @Override
+    public String toString(){
+        return super.toString() + " with" + get_filling1() + " and" + get_filling2();
+    }
 }

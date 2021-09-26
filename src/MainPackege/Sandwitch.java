@@ -1,11 +1,11 @@
 package MainPackege;
 
-public class Sandwitch extends Food{
+class Sandwich extends Food{
     private String _filling1;
     private String _filling2;
 
-    public Sandwitch(String filling1, String filling2) {
-        super("Sandwitch", 200);
+    public Sandwich(String filling1, String filling2) {
+        super("Sandwich", 200);
         _filling1 = filling1;
         _filling2 = filling2;
     }
@@ -22,7 +22,7 @@ public class Sandwitch extends Food{
 
     @Override
     public void consume() {
-        System.out.print(get_name() + "eaten! :)");
+        System.out.println(get_name() + "eaten! :)");
     }
 
     @Override
@@ -41,8 +41,8 @@ public class Sandwitch extends Food{
     @Override
     public boolean equals(Object obj) {
         if (!super.equals(obj)) return false;
-        if (!(obj instanceof Sandwitch)) return false;
-        return (_filling1.equals(((Sandwitch) obj)._filling1) && (_filling2.equals(((Sandwitch) obj)._filling2)));
+        if (!(obj instanceof Sandwich)) return false;
+        return (_filling1.equals(((Sandwich) obj)._filling1) && (_filling2.equals(((Sandwich) obj)._filling2)));
     }
 
     @Override

@@ -8,7 +8,7 @@ public class Apple extends Food{
 
     @Override
     public void consume() {
-        System.out.print(get_name() + "Fuck! With worms!");
+        System.out.println(get_name() + "Fuck! With worms!");
     }
 
     @Override

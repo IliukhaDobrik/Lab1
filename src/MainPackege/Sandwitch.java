@@ -27,7 +27,14 @@ public class Sandwitch extends Food{
 
     @Override
     public int calculateCalories() {
-
+        if (get_filling1().equals("Ham"))
+            set_calories(get_calories() + 145);
+        else if (get_filling1().equals("Chicken"))
+            set_calories(get_calories() + 170);
+        else if (get_filling2().equals("Ketchup"))
+            set_calories(get_calories() + 170);
+        else if (get_filling2().equals("Mayonnaise"))
+            set_calories(get_calories() + 170);
         return get_calories();
     }
 

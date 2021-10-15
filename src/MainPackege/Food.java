@@ -12,14 +12,14 @@ public abstract class Food implements Consumable, Nutritious{
     public int get_calories() {
         return _calories;
     }
-    public void set_calories(int calories) {
+    protected void set_calories(int calories) {
         _calories = calories;
     }
 
     public String get_name() {
         return _name;
     }
-    public void set_name(String name) {
+    private void set_name(String name) {
         _name = name;
     }
 

@@ -15,4 +15,7 @@ public class Apple extends Food{
     public int calculateCalories() {
         return get_calories();
     }
+
+    @Override
+    public String toString(){ return super.toString(); }
 }

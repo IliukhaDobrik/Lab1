@@ -8,11 +8,14 @@ public class Cheese extends Food{
 
     @Override
     public void consume() {
-        System.out.println(get_name() + "eaten! Yammy!");
+        System.out.println(get_name() + "eaten! Yummy!");
     }
 
     @Override
     public int calculateCalories() {
         return get_calories();
     }
+
+    @Override
+    public String toString(){ return super.toString(); }
 }

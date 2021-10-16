@@ -24,8 +24,17 @@ public class Main {
             PrintArrayList(breakfast);
         }
 
+        Consume(breakfast);
+
         if (calories.equals("y"))
             System.out.println("U ate " + CalculateCalories(breakfast) + " calories");
+    }
+
+    private static void Consume(ArrayList<Food> breakfast) {
+        if (breakfast == null)
+            return;
+        for (Food el:breakfast)
+            el.consume();
     }
 
     public static void FillArrayList(ArrayList<Food> breakfast) throws Exception{
@@ -55,7 +64,7 @@ public class Main {
     public static void PrintArrayList(ArrayList<Food> breakfast){
         if (breakfast == null)
             System.out.println("U are fat, u are not allowed to eat!");
-        System.out.println("U ate today: ");
+        System.out.println("U want to ate today: ");
         for (Food item : breakfast)
             System.out.print(item.toString() + ", ");
         System.out.println();

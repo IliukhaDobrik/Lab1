@@ -1,8 +1,8 @@
 package MainPackege;
 
 class Sandwich extends Food{
-    private String _filling1;
-    private String _filling2;
+    private String _filling1 = null;
+    private String _filling2 = null;
 
     public Sandwich(String filling1, String filling2) {
         super("Sandwich", 200);
@@ -22,7 +22,7 @@ class Sandwich extends Food{
 
     @Override
     public void consume() {
-        System.out.println(get_name() + "eaten! :)");
+        System.out.println(get_name() + " eaten! :)");
     }
 
     @Override

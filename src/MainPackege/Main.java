@@ -1,6 +1,7 @@
 package MainPackege;
 
 import java.util.*;
+import java.lang.reflect.*;
 
 public class Main {
     public static Scanner scanner = new Scanner(System.in);
@@ -50,8 +51,12 @@ public class Main {
             else if (food.equals("Sandwich")){
                 System.out.print("Enter first filling: ");
                 String filling1 = scanner.nextLine();
+                if (!(filling1.equals("Ham") || filling1.equals("Chicken")))
+                    throw new ClassNotFoundException("This food so fat for breakfast!");
                 System.out.print("Enter second filling: ");
                 String filling2 = scanner.nextLine();
+                if (!(filling2.equals("Ketchup") || filling2.equals("Mayonnaise")))
+                    throw new ClassNotFoundException("This food so fat for breakfast!");
                 breakfast.add(new Sandwich(filling1,filling2));
             }
             else throw new ClassNotFoundException("This food so fat for breakfast!");
@@ -61,12 +66,20 @@ public class Main {
         } while(answer.equals("y"));
     }
 
-    public static void PrintArrayList(ArrayList<Food> breakfast){
+    public static void PrintArrayList(final ArrayList<Food> breakfast) throws ClassNotFoundException, NoSuchFieldException {
         if (breakfast == null)
             System.out.println("U are fat, u are not allowed to eat!");
         System.out.println("U want to ate today: ");
-        for (Food item : breakfast)
-            System.out.print(item.toString() + ", ");
+        for (Food item : breakfast) {
+            Class MyClass = item.getClass();
+            System.out.println(MyClass.getSimpleName());
+
+            Field[] fields = MyClass.getDeclaredFields();
+            for (Field it : fields){
+                System.out.println(it);
+            }
+            //System.out.print(item.toString() + ", ");
+        }
         System.out.println();
     }
 
